@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GaleríaArte · Materiales y Obras</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Sans+3:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="wall-texture">
+
+  <div class="museum-spotlight" id="spotlight"></div>
+  <div class="light-beam"></div>
+  <div id="particles-container"></div>
+  
+  
+
+  <nav class="navbar">
+    <div class="logo">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+        <path d="M4,22 Q8,10 14,8 Q18,6 20,12 Q22,18 16,20 Q10,22 8,16" stroke="#a8d4a0" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <circle cx="22" cy="6" r="3" fill="#c9a84c" opacity="0.8"/>
+      </svg>
+      <span>Galería<span>Arte</span></span>
+    </div>
+    <div class="nav-links">
+      <a href="#materiales">Materiales</a>
+      <a href="#obras">Obras de Arte</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <span class="badge">✦ Colección Exclusiva</span>
+      <h1>El Arte de Crear & Conservar</h1>
+      <p>Materiales de alta pigmentación y obras de autor seleccionadas para coleccionistas y creadores exigentes.</p>
+    </div>
+  </header>
+
+  <section class="offers-carousel" aria-label="Ofertas disponibles">
+    <div class="offers-track" id="offers-track">
+      <article class="offer-slide is-active">
+        <img src="Acuarelas.jpg" alt="Paleta de acuarelas en oferta">
+        <div class="offer-overlay">
+          <span class="offer-kicker">OFERTA DE TEMPORADA</span>
+          <h2>Ofertas disponibles</h2>
+          <p>Hasta 20% de descuento en materiales seleccionados.</p>
+          <a class="offer-button" href="#materiales">Ver ofertas <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="offer-slide">
+        <img src="Oleo%20en%20tubos.jpg" alt="Tubos de óleo en oferta">
+        <div class="offer-overlay">
+          <span class="offer-kicker">SELECCIÓN DEL MES</span>
+          <h2>Color que permanece</h2>
+          <p>Óleos premium con precio especial por tiempo limitado.</p>
+          <a class="offer-button" href="#materiales">Descubrir selección <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+      <article class="offer-slide">
+        <img src="Caballete.jpg" alt="Caballete de estudio en oferta">
+        <div class="offer-overlay">
+          <span class="offer-kicker">PARA TU ESTUDIO</span>
+          <h2>Equipa tu espacio</h2>
+          <p>Accesorios de estudio con envío especial esta semana.</p>
+          <a class="offer-button" href="#materiales">Ver accesorios <span aria-hidden="true">&rarr;</span></a>
+        </div>
+      </article>
+    </div>
+    <button class="offer-arrow offer-arrow-prev" type="button" aria-label="Oferta anterior">&larr;</button>
+    <button class="offer-arrow offer-arrow-next" type="button" aria-label="Siguiente oferta">&rarr;</button>
+    <div class="offer-dots" aria-label="Seleccionar oferta">
+      <button class="offer-dot is-active" type="button" aria-label="Mostrar oferta 1"></button>
+      <button class="offer-dot" type="button" aria-label="Mostrar oferta 2"></button>
+      <button class="offer-dot" type="button" aria-label="Mostrar oferta 3"></button>
+    </div>
+  </section>
+
+  <section class="section-container" id="materiales">
+    <div class="section-header">
+      <div>
+        <span class="section-subtitle">HERRAMIENTAS DE PRECISIÓN</span>
+        <h2 class="section-title">Materiales de Arte Premium</h2>
+      </div>
+      <div class="carousel-controls">
+        <button class="btn-arrow" onclick="scrollCarousel('carousel-materiales', -320)">&larr;</button>
+        <button class="btn-arrow" onclick="scrollCarousel('carousel-materiales', 320)">&rarr;</button>
+      </div>
+    </div>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel-materiales">
+        <div class="museum-card">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&fit=crop" alt="Pinceles"></div>
+          <div class="card-info">
+            <span class="card-cat">PINCELES</span>
+            <h3>Set Maestro Pelo Natural</h3>
+            <p>12 pinceles finos para óleo y acrílico.</p>
+            <div class="card-price">$52 USD</div>
+          </div>
+        </div>
+        <div class="museum-card">
+          <div class="card-image"><img src="Oleo%20en%20tubos.jpg" alt="Óleos"></div>
+          <div class="card-info">
+            <span class="card-cat">PINTURAS</span>
+            <h3>Set Óleos Holandeses 24ml</h3>
+            <p>Pigmentación orgánica de alta pureza.</p>
+            <div class="card-price">$85 USD</div>
+          </div>
+        </div>
+        <div class="museum-card">
+          <div class="card-image"><img src="orizonte%20de%20texturas.jpg" alt="Lienzo"></div>
+          <div class="card-info">
+            <span class="card-cat">LIENZOS</span>
+            <h3>Lienzo Lino Importado 80x100</h3>
+            <p>Preparación en imprimatura gesso tradicional.</p>
+            <div class="card-price">$68 USD</div>
+          </div>
+        </div>
+        <div class="museum-card">
+          <div class="card-image"><img src="Carboncillo.jpg" alt="Lápices"></div>
+          <div class="card-info">
+            <span class="card-cat">DIBUJO</span>
+            <h3>Caja Dibujo Grafito & Carbón</h3>
+            <p>Graduaciones de 9B a 9H con estuche de madera.</p>
+            <div class="card-price">$34 USD</div>
+          </div>
+        </div>
+        <div class="museum-card">
+          <div class="card-image"><img src="Acuarelas.jpg" alt="Acuarelas"></div>
+          <div class="card-info">
+            <span class="card-cat">PINTURAS</span>
+            <h3>Paleta Acuarela Botánica</h3>
+            <p>24 godets metálicos de brillo natural.</p>
+            <div class="card-price">$60 USD</div>
+          </div>
+        </div>
+        <div class="museum-card">
+          <div class="card-image"><img src="Caballete.jpg" alt="Caballete"></div>
+          <div class="card-info">
+            <span class="card-cat">ACCESORIOS</span>
+            <h3>Caballete de Estudio Madera</h3>
+            <p>Estructura regulable en haya maciza.</p>
+            <div class="card-price">$110 USD</div>
+          </div>
+        </div>
+        <div class="museum-card">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&fit=crop" alt="Papel"></div>
+          <div class="card-info">
+            <span class="card-cat">PAPELES</span>
+            <h3>Bloc Algodón 300g Acuarela</h3>
+            <p>20 hojas de grano fino prensado en frío.</p>
+            <div class="card-price">$29 USD</div>
+          </div>
+        </div>
+        <div class="museum-card">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1569172122301-bc5008bc09c5?w=600&fit=crop" alt="Paleta"></div>
+          <div class="card-info">
+            <span class="card-cat">ACCESORIOS</span>
+            <h3>Paleta de Vidrio Templado</h3>
+            <p>Superficie neutra fácil de limpiar.</p>
+            <div class="card-price">$38 USD</div>
+          </div>
+        </div>
+        <div class="museum-card">
+          <div class="card-image"><img src="Cajon%20organizador.webp" alt="Cajón organizador"></div>
+          <div class="card-info">
+            <span class="card-cat">ORGANIZACIÓN</span>
+            <h3>Cajón Organizador de Estudio</h3>
+            <p>Compartimentos para guardar herramientas y materiales.</p>
+            <div class="card-price">$45 USD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section class="section-container" id="obras">
+    <div class="section-header">
+      <div>
+        <span class="section-subtitle">EXPOSICIÓN Y VENTA</span>
+        <h2 class="section-title">Obras de Arte Originales</h2>
+      </div>
+      <div class="carousel-controls">
+        <button class="btn-arrow" onclick="scrollCarousel('carousel-obras', -320)">&larr;</button>
+        <button class="btn-arrow" onclick="scrollCarousel('carousel-obras', 320)">&rarr;</button>
+      </div>
+    </div>
+
+    <div class="carousel-wrapper">
+      <div class="carousel-track" id="carousel-obras">
+        <div class="museum-card artwork-card">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&fit=crop" alt="Amanecer Dorado"></div>
+          <div class="card-info">
+            <span class="card-cat">ÓLEO / LIENZO</span>
+            <h3>Amanecer Dorado</h3>
+            <p>Por Elena Rostova (60x80cm)</p>
+            <div class="card-price gold">$480 USD</div>
+          </div>
+        </div>
+        <div class="museum-card artwork-card">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=600&fit=crop" alt="Sinfonía Verde"></div>
+          <div class="card-info">
+            <span class="card-cat">ACRÍLICO</span>
+            <h3>Sinfonía Verde</h3>
+            <p>Por Marco Vance (100x100cm)</p>
+            <div class="card-price gold">$620 USD</div>
+          </div>
+        </div>
+        <div class="museum-card artwork-card">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=600&fit=crop" alt="Estudio de Luz"></div>
+          <div class="card-info">
+            <span class="card-cat">ÓLEO SOBRE TABLA</span>
+            <h3>Estudio de Luz Nocturna</h3>
+            <p>Por Sophia Althaus (40x50cm)</p>
+            <div class="card-price gold">$390 USD</div>
+          </div>
+        </div>
+        <div class="museum-card artwork-card">
+          <div class="card-image"><img src="Reflejos%20de%20Otoño.jpg" alt="Reflejos"></div>
+          <div class="card-info">
+            <span class="card-cat">TÉCNICA MIXTA</span>
+            <h3>Reflejos de Otoño</h3>
+            <p>Por Julien Dupont (70x90cm)</p>
+            <div class="card-price gold">$540 USD</div>
+          </div>
+        </div>
+        <div class="museum-card artwork-card">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&fit=crop" alt="Geometría"></div>
+          <div class="card-info">
+            <span class="card-cat">ABSTRACTO</span>
+            <h3>Geometría de la Mente</h3>
+            <p>Por Clara Morales (80x120cm)</p>
+            <div class="card-price gold">$710 USD</div>
+          </div>
+        </div>
+        <div class="museum-card artwork-card">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=600&fit=crop" alt="Crepúsculo"></div>
+          <div class="card-info">
+            <span class="card-cat">ACUARELA FINAS</span>
+            <h3>Crepúsculo Efímero</h3>
+            <p>Por Hiroshi Tanaka (50x70cm)</p>
+            <div class="card-price gold">$310 USD</div>
+          </div>
+        </div>
+        <div class="museum-card artwork-card">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=600&fit=crop" alt="Retrato"></div>
+          <div class="card-info">
+            <span class="card-cat">CARBONCILLO</span>
+            <h3>Sombra y Mirada</h3>
+            <p>Por Mateo Benítez (45x60cm)</p>
+            <div class="card-price gold">$280 USD</div>
+          </div>
+        </div>
+        <div class="museum-card artwork-card">
+          <div class="card-image"><img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=600&fit=crop" alt="Horizonte"></div>
+          <div class="card-info">
+            <span class="card-cat">ÓLEO ESPÁTULA</span>
+            <h3>Horizonte de Texturas</h3>
+            <p>Por Andrea Castelli (90x90cm)</p>
+            <div class="card-price gold">$850 USD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- SECCIÓN GALERÍA CATÁLOGO 4x6 (24 ARTÍCULOS) -->
+<section class="section-container" id="galeria-catalogo">
+  <div class="section-header">
+    <div>
+      <span class="section-subtitle">CATÁLOGO COMPLETO</span>
+      <h2 class="section-title">Galería de Artículos & Herramientas</h2>
+    </div>
+  </div>
+
+  <div class="gallery-grid-4x6">
+    <!-- 1. Pinceles -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&fit=crop" alt="Pinceles de Detalle"></div>
+      <div class="item-info">
+        <span class="item-cat">Pinceles</span>
+        <h4>Pinceles de Detalle</h4>
+      </div>
+    </div>
+    <!-- 2. Pinceles -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=500&fit=crop" alt="Pinceles Planos"></div>
+      <div class="item-info">
+        <span class="item-cat">Pinceles</span>
+        <h4>Set Pinceles Planos</h4>
+      </div>
+    </div>
+
+    <!-- 3. Pinturas Acrílicas -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1560421683-6856ea585c78?w=500&fit=crop" alt="Pintura Acrílica"></div>
+      <div class="item-info">
+        <span class="item-cat">Pinturas Acrílicas</span>
+        <h4>Set Acrílicos Primarios</h4>
+      </div>
+    </div>
+    <!-- 4. Pinturas Acrílicas -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1579783900882-c0d3dad7b119?w=500&fit=crop" alt="Acrílico Fluido"></div>
+      <div class="item-info">
+        <span class="item-cat">Pinturas Acrílicas</span>
+        <h4>Acrílico Fluido Pouring</h4>
+      </div>
+    </div>
+
+    <!-- 5. Pinturas de Óleo -->
+    <div class="grid-item">
+      <div class="item-img"><img src="Oleo%20en%20tubos.jpg" alt="Óleos Profesionales"></div>
+      <div class="item-info">
+        <span class="item-cat">Pinturas de Óleo</span>
+        <h4>Tubos de Óleo Clásico</h4>
+      </div>
+    </div>
+    <!-- 6. Pinturas de Óleo -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=500&fit=crop" alt="Óleo Transparente"></div>
+      <div class="item-info">
+        <span class="item-cat">Pinturas de Óleo</span>
+        <h4>Óleos Transparentes</h4>
+      </div>
+    </div>
+
+    <!-- 7. Gubias de Grabado -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1544717305-2782549b5136?w=500&fit=crop" alt="Set de Gubias"></div>
+      <div class="item-info">
+        <span class="item-cat">Gubias de Grabado</span>
+        <h4>Set Gubias Linóleo</h4>
+      </div>
+    </div>
+    <!-- 8. Gubias de Grabado -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=500&fit=crop" alt="Gubia Profesional"></div>
+      <div class="item-info">
+        <span class="item-cat">Gubias de Grabado</span>
+        <h4>Gubia Mango Madera</h4>
+      </div>
+    </div>
+
+    <!-- 9. Lápices Negros -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=500&fit=crop" alt="Lápices de Grafito"></div>
+      <div class="item-info">
+        <span class="item-cat">Lápices Negros</span>
+        <h4>Grafito 2B a 8B</h4>
+      </div>
+    </div>
+    <!-- 10. Lápices Negros -->
+    <div class="grid-item">
+      <div class="item-img"><img src="Carboncillo.jpg" alt="Lápiz Carboncillo"></div>
+      <div class="item-info">
+        <span class="item-cat">Lápices Negros</span>
+        <h4>Carboncillo Puro</h4>
+      </div>
+    </div>
+
+    <!-- 11. Lápices de Colores -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=500&fit=crop" alt="Lápices de Colores"></div>
+      <div class="item-info">
+        <span class="item-cat">Lápices de Colores</span>
+        <h4>Colores Acuarelables</h4>
+      </div>
+    </div>
+    <!-- 12. Lápices de Colores -->
+    <div class="grid-item">
+      <div class="item-img"><img src="Acuarelas.jpg" alt="Lápices Pastel"></div>
+      <div class="item-info">
+        <span class="item-cat">Lápices de Colores</span>
+        <h4>Gama Lápices Pastel</h4>
+      </div>
+    </div>
+
+    <!-- 13. Bastidores -->
+    <div class="grid-item">
+      <div class="item-img"><img src="orizonte%20de%20texturas.jpg" alt="Bastidor Entelado"></div>
+      <div class="item-info">
+        <span class="item-cat">Bastidores</span>
+        <h4>Bastidor Lienzo 40x50</h4>
+      </div>
+    </div>
+    <!-- 14. Bastidores -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1578321272176-b7bbc0679853?w=500&fit=crop" alt="Bastidor Redondo"></div>
+      <div class="item-info">
+        <span class="item-cat">Bastidores</span>
+        <h4>Bastidor Circular</h4>
+      </div>
+    </div>
+
+    <!-- Caballete de estudio -->
+    <div class="grid-item">
+      <div class="item-img"><img src="Caballete.jpg" alt="Caballete de Estudio"></div>
+      <div class="item-info">
+        <span class="item-cat">Accesorios</span>
+        <h4>Caballete de Estudio</h4>
+      </div>
+    </div>
+
+    <!-- 15. Separadores de Artículos -->
+    <div class="grid-item">
+      <div class="item-img"><img src="Cajon%20organizador.webp" alt="Organizador Escritorio"></div>
+      <div class="item-info">
+        <span class="item-cat">Separadores</span>
+        <h4>Organizador Modular</h4>
+      </div>
+    </div>
+    <!-- 16. Separadores de Artículos -->
+    <div class="grid-item">
+      <div class="item-img"><img src="Cajon%20organizador.webp" alt="Caja Separadora"></div>
+      <div class="item-info">
+        <span class="item-cat">Separadores</span>
+        <h4>Estuche Cajas Separadoras</h4>
+      </div>
+    </div>
+
+    <!-- 17. Porcelana Fría -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=500&fit=crop" alt="Porcelana Fría"></div>
+      <div class="item-info">
+        <span class="item-cat">Porcelana Fría</span>
+        <h4>Porcelana Fría 500g</h4>
+      </div>
+    </div>
+    <!-- 18. Porcelana Fría -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?w=500&fit=crop" alt="Porcelana Flexible"></div>
+      <div class="item-info">
+        <span class="item-cat">Porcelana Fría</span>
+        <h4>Porcelana Extra Soft</h4>
+      </div>
+    </div>
+
+    <!-- 19. Masa Moldeable -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500&fit=crop" alt="Masa Secado Aire"></div>
+      <div class="item-info">
+        <span class="item-cat">Masa Moldeable</span>
+        <h4>Arcilla Secado al Aire</h4>
+      </div>
+    </div>
+    <!-- 20. Masa Moldeable -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=500&fit=crop" alt="Masa Polimérica"></div>
+      <div class="item-info">
+        <span class="item-cat">Masa Moldeable</span>
+        <h4>Masa Polimérica Set</h4>
+      </div>
+    </div>
+
+    <!-- 21. Pinceles Extra -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?w=500&fit=crop" alt="Pincel Abanico"></div>
+      <div class="item-info">
+        <span class="item-cat">Pinceles</span>
+        <h4>Pincel Abanico Óleo</h4>
+      </div>
+    </div>
+    <!-- 22. Lápices Negros Extra -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?w=500&fit=crop" alt="Portaminas Técnico"></div>
+      <div class="item-info">
+        <span class="item-cat">Lápices Negros</span>
+        <h4>Portaminas Técnico 2mm</h4>
+      </div>
+    </div>
+    <!-- 23. Bastidores Extra -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1541701494587-cb58502866ab?w=500&fit=crop" alt="Lienzo de Lino"></div>
+      <div class="item-info">
+        <span class="item-cat">Bastidores</span>
+        <h4>Bastidor Lino Orgánico</h4>
+      </div>
+    </div>
+    <!-- 24. Masa Moldeable Extra -->
+    <div class="grid-item">
+      <div class="item-img"><img src="https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500&fit=crop" alt="Pasta Terracota"></div>
+      <div class="item-info">
+        <span class="item-cat">Masa Moldeable</span>
+        <h4>Pasta Terracota</h4>
+      </div>
+    </div>
+  </div>
+  </section>
+  <footer class="footer">
+    <p>© 2026 GaleríaArte · Materiales de Arte & Colección Privada</p>
+  </footer>
+
+  <div class="art-modal" id="art-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-content">
+      <button class="modal-close" type="button" aria-label="Cerrar descripción" data-close-modal>&times;</button>
+      <img class="modal-image" id="modal-image" src="" alt="">
+      <div class="modal-copy">
+        <span class="modal-category" id="modal-category"></span>
+        <h2 id="modal-title"></h2>
+        <p id="modal-description"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="JavaScript"></script>
+</body>
+</html>

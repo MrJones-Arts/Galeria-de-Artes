@@ -1,0 +1,162 @@
+const spotlight = document.getElementById('spotlight');
+
+document.addEventListener('mousemove', (e) => {
+  if (spotlight) {
+    spotlight.style.setProperty('--mx', `${(e.clientX / window.innerWidth) * 100}%`);
+    spotlight.style.setProperty('--my', `${(e.clientY / window.innerHeight) * 100}%`);
+  }
+});
+
+// Generación de partículas flotantes
+const particlesContainer = document.getElementById('particles-container');
+const particleColors = ['#a8d4a0', '#c9a84c', '#c8e8c0'];
+
+for (let i = 0; i < 20; i++) {
+  if (!particlesContainer) break;
+
+  const particle = document.createElement('div');
+  particle.classList.add('particle');
+  
+  const size = 3 + Math.random() * 8;
+  const xPos = Math.random() * 100;
+  const delay = Math.random() * 12;
+  const duration = 14 + Math.random() * 16;
+  const swayDuration = 4 + Math.random() * 6;
+  const swayDelay = Math.random() * 4;
+  const color = particleColors[Math.floor(Math.random() * particleColors.length)];
+  const opacity = 0.08 + Math.random() * 0.18;
+
+  particle.style.width = `${size}px`;
+  particle.style.height = `${size}px`;
+  particle.style.left = `${xPos}%`;
+  particle.style.bottom = `-20px`;
+  particle.style.background = color;
+  particle.style.opacity = opacity;
+  particle.style.animation = `floatUp ${duration}s ${delay}s linear infinite, sway ${swayDuration}s ${swayDelay}s ease-in-out infinite`;
+  
+  particlesContainer.appendChild(particle);
+}
+
+// Desplaza el carrusel indicado por las flechas del HTML.
+window.scrollCarousel = function (carouselId, distance) {
+  const container = document.getElementById(carouselId);
+  if (container) {
+    container.scrollBy({
+      left: distance,
+      behavior: 'smooth'
+    });
+  }
+};
+
+const offerTrack = document.getElementById('offers-track');
+const offerSlides = document.querySelectorAll('.offer-slide');
+const offerDots = document.querySelectorAll('.offer-dot');
+const offerPrevious = document.querySelector('.offer-arrow-prev');
+const offerNext = document.querySelector('.offer-arrow-next');
+let currentOffer = 0;
+let offerTimer;
+
+function showOffer(index) {
+  currentOffer = (index + offerSlides.length) % offerSlides.length;
+  offerTrack.style.transform = `translateX(-${currentOffer * 100}%)`;
+
+  offerSlides.forEach((slide, slideIndex) => {
+    slide.classList.toggle('is-active', slideIndex === currentOffer);
+  });
+  offerDots.forEach((dot, dotIndex) => {
+    dot.classList.toggle('is-active', dotIndex === currentOffer);
+  });
+}
+
+function startOfferRotation() {
+  window.clearInterval(offerTimer);
+  offerTimer = window.setInterval(() => showOffer(currentOffer + 1), 5000);
+}
+
+if (offerTrack && offerSlides.length) {
+  offerPrevious.addEventListener('click', () => {
+    showOffer(currentOffer - 1);
+    startOfferRotation();
+  });
+  offerNext.addEventListener('click', () => {
+    showOffer(currentOffer + 1);
+    startOfferRotation();
+  });
+  offerDots.forEach((dot, index) => {
+    dot.addEventListener('click', () => {
+      showOffer(index);
+      startOfferRotation();
+    });
+  });
+
+  offerTrack.parentElement.addEventListener('mouseenter', () => window.clearInterval(offerTimer));
+  offerTrack.parentElement.addEventListener('mouseleave', startOfferRotation);
+  startOfferRotation();
+}
+
+const modal = document.getElementById('art-modal');
+const modalImage = document.getElementById('modal-image');
+const modalCategory = document.getElementById('modal-category');
+const modalTitle = document.getElementById('modal-title');
+const modalDescription = document.getElementById('modal-description');
+const materialDescriptions = [
+  'Fabricado por Winsor & Newton con pelo natural seleccionado y mango de madera barnizada. Su punta conserva la forma para trabajos finos.',
+  'Elaborado por Royal Talens con aceites vegetales y pigmentos minerales de alta concentración para mezclas luminosas y duraderas.',
+  'Lienzo de lino belga de grano medio, tensado sobre madera de pino y preparado con tres capas de gesso acrílico.',
+  'Selección Faber-Castell con grafito de alta calidad y carbón vegetal, dentro de un estuche de madera de haya.',
+  'Paleta de Schmincke con acuarelas de pigmento extrafino y aglutinante de goma arábiga para transparencias limpias.',
+  'Caballete fabricado en haya maciza por Mabef, con herrajes metálicos y altura regulable para trabajar de pie o sentado.',
+  'Papel Arches de 100% algodón, libre de ácido y prensado en frío para absorber el agua sin deformarse.',
+  'Paleta de vidrio templado de superficie no porosa, resistente a manchas y fácil de limpiar entre cada sesión.',
+  'Cajón modular fabricado en madera laminada, con compartimentos prácticos para separar pinceles, lápices y pequeñas herramientas.'
+];
+const artworkDescriptions = [
+  'Una escena de horizonte abierto donde la luz dorada del amanecer transforma el paisaje en una atmósfera serena y cálida.',
+  'Composición abstracta de verdes superpuestos que evoca el movimiento de hojas y ramas bajo una luz de bosque.',
+  'Estudio íntimo de una fuente de luz nocturna, con contrastes profundos y reflejos que guían la mirada por la escena.',
+  'Texturas ocres y rojizas se mezclan como hojas suspendidas, creando una sensación de movimiento y cambio de estación.',
+  'Formas geométricas y colores enfrentados construyen un paisaje mental equilibrado entre orden, tensión y ritmo.',
+  'Acuarela delicada de un cielo al final del día, con capas transparentes que capturan la fugacidad del crepúsculo.',
+  'Retrato en carboncillo de mirada intensa, modelado con sombras suaves que dejan parte de la expresión en misterio.',
+  'Paisaje matérico trabajado con espátula, donde cada relieve convierte el horizonte en una superficie casi escultórica.'
+];
+
+function openArtModal(card, description) {
+  const image = card.querySelector('img');
+  const title = card.querySelector('h3');
+  const category = card.querySelector('.card-cat');
+
+  modalImage.src = image.src;
+  modalImage.alt = image.alt;
+  modalCategory.textContent = category.textContent;
+  modalTitle.textContent = title.textContent;
+  modalDescription.textContent = description;
+  modal.classList.add('is-open');
+  modal.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden';
+  modal.querySelector('.modal-close').focus();
+}
+
+function closeArtModal() {
+  modal.classList.remove('is-open');
+  modal.setAttribute('aria-hidden', 'true');
+  document.body.style.overflow = '';
+}
+
+document.querySelectorAll('#carousel-materiales .museum-card').forEach((card, index) => {
+  card.addEventListener('click', () => openArtModal(card, materialDescriptions[index]));
+});
+
+document.querySelectorAll('#carousel-obras .museum-card').forEach((card, index) => {
+  card.addEventListener('click', () => openArtModal(card, artworkDescriptions[index]));
+});
+
+modal.querySelectorAll('[data-close-modal]').forEach((element) => {
+  element.addEventListener('click', closeArtModal);
+});
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+    closeArtModal();
+  }
+});
